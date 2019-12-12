@@ -1,3 +1,13 @@
+.navbar-travel {
+  padding: 2%;
+  top: 0px;
+}
+
+.position-top {
+  position: static;
+  transition: 100ms;
+}
+
 .sidenav-container {
   height: 100%;
   // min-height: 100vh;
@@ -17,3 +27,17 @@
   top: 0;
   z-index: 1;
 }
+
+.btn-menu {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+}
+
+.title-nav {
+  color: darkgray !important;
+  margin: 10px;
+  text-align: center;
+  vertical-align: center;
+}
+

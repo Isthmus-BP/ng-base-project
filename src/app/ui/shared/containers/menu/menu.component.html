@@ -13,43 +13,29 @@
       <a mat-list-item routerLink="/home/page2">Pagina 2</a>
     </mat-nav-list>
   </mat-sidenav>
-  <!-- <mat-sidenav
-    #drawer1
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-    position="end"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home/page1">Pagina 1</a>
-      <a mat-list-item routerLink="/home/page2">Pagina 2</a>
-    </mat-nav-list>
-  </mat-sidenav> -->
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
 
-      <span>base-project</span>
-      <!-- <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer1.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button> -->
+  <mat-sidenav-content>
+    <mat-toolbar [class]="'navbar-travel'">
+      <img src="/assets/logo-promerica.png" height="70%"/>
+      <p class="text-light font-weight-lighter title-nav">| Travel</p>
+      <div class="btn-menu">
+        <button
+          type="button"
+          mat-icon-button
+        >
+          <mat-icon aria-label="Side nav toggle icon">notifications_none</mat-icon>
+        </button>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          class=""
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  config: any = {
+    init: false,
+    direction: 'horizontal',
+    autoHeight: true,
+    centerInsufficientSlides: true,
+    slideActiveClass: 'card-active',
+  };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

@@ -13,6 +13,7 @@ import {DetailComponent} from './detail/detail.component';
 import {MapaComponent} from './mapa/mapa.component';
 import {TestListComponent} from './test-list/test-list.component';
 import {TestDetailComponent} from './test-detail/test-detail.component';
+import {ComponentsModule} from '../shared/components/components.module';
 import {SwiperModule} from 'ngx-swiper-wrapper';
 
 @NgModule({
@@ -27,7 +28,14 @@ import {SwiperModule} from 'ngx-swiper-wrapper';
     TestListComponent,
     TestDetailComponent
   ],
-  imports: [CommonModule, HomeRoutingModule, SharedModule, MatModule, SwiperModule]
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    SharedModule,
+    MatModule,
+    ComponentsModule,
+    SwiperModule
+  ]
 })
 export class HomeModule {
 }

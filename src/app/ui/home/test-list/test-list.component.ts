@@ -6,11 +6,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./test-list.component.scss"]
 })
 export class TestListComponent implements OnInit {
-  public show: boolean = false;
+  public show: boolean = true;
   constructor() {}
 
   ngOnInit() {
-    alert("TestListComponent");
     setTimeout(() => {
       this.show = true;
     }, 1000);

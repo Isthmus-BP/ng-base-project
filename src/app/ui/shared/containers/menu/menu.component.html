@@ -6,51 +6,61 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
+    [hidden]="!(isHandset$ | async)"
+    [disableClose]="true"
   >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home/page1">Pagina 1</a>
-      <a mat-list-item routerLink="/home/page2">Pagina 2</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <!-- <mat-sidenav
-    #drawer1
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-    position="end"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home/page1">Pagina 1</a>
-      <a mat-list-item routerLink="/home/page2">Pagina 2</a>
-    </mat-nav-list>
-  </mat-sidenav> -->
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar
+      >Menu
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
+        (click)="goBack()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="irPantalla('/home/main/page1')">Pagina 1</a>
+      <a mat-list-item (click)="irPantalla('/home/main/page2')">Pagina 2</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="goOutlet()"
         *ngIf="isHandset$ | async"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span>base-project</span>
-      <!-- <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer1.toggle()"
-        *ngIf="isHandset$ | async"
+      <span style="margin-right: 10px;">Travel</span>
+      <a
+        *ngIf="!(isHandset$ | async)"
+        mat-button
+        color="accent"
+        routerLink="/home/main/page1"
+        >Pagina 1</a
       >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button> -->
+      <a
+        *ngIf="!(isHandset$ | async)"
+        mat-button
+        color="accent"
+        routerLink="/home/main/page2"
+        >Pagina 2</a
+      >
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<router-outlet
+  name="menuoutlet"
+  (activate)="drawer.toggle()"
+  (deactivate)="drawer.toggle()"
+></router-outlet>

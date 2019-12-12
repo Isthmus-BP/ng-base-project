@@ -1,20 +1,21 @@
-import { Component, NgZone, ViewChild } from "@angular/core";
+import { Component, NgZone, ViewChild, OnInit } from "@angular/core";
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay } from "rxjs/operators";
 import { Location } from "@angular/common";
 import { MatSidenav } from "@angular/material";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-menu",
   templateUrl: "./menu.component.html",
   styleUrls: ["./menu.component.scss"]
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    .observe([Breakpoints.Handset, Breakpoints.TabletPortrait])
     .pipe(
       map(result => result.matches),
       shareReplay()
@@ -23,28 +24,27 @@ export class MenuComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private zone: NgZone,
-    private location: Location
+    private location: Location,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
-  //called when the menu opens or close
-  // onOpenedChange(isOpened: boolean) {
-  //   if (!isOpened) {
-  //     alert("test");
-  //     window.removeEventListener("popstate", this.onHardwareBackButton);
-  //   }
-  //   this.zone.runOutsideAngular(() => {
-  //     if (isOpened) {
-  //       window.addEventListener("popstate", this.onHardwareBackButton, {
-  //         passive: true
-  //       });
-  //       this.location.go("side-nav");
-  //     } else {
-  //     }
-  //   });
-  // }
-  //called when back button is pressed
-  private onHardwareBackButton = () => {
-    this.sidenav.close();
-    window.removeEventListener("popstate", this.onHardwareBackButton);
-  };
+  goOutlet(fruta: string) {
+    this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {
+      relativeTo: this.route
+    });
+  }
+
+  ngOnInit(): void {}
+
+  goBack() {
+    this.location.back();
+  }
+
+  irPantalla(route: string) {
+    this.goBack();
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 100);
+  }
 }

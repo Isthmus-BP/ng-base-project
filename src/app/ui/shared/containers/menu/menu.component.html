@@ -28,28 +28,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar [class]="'navbar-travel'">
-      <img src="/assets/logo-promerica.png" height="70%"/>
-      <p class="text-light font-weight-lighter title-nav">| Travel</p>
-      <div class="btn-menu">
-        <button
-          type="button"
-          mat-icon-button
-        >
-          <mat-icon aria-label="Side nav toggle icon">notifications_none</mat-icon>
-        </button>
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          class=""
-          (click)="goOutlet()"
-          *ngIf="isHandset$ | async"
-        >
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar>
+    <app-nav-bar></app-nav-bar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

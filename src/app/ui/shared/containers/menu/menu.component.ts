@@ -25,15 +25,8 @@ export class MenuComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     private zone: NgZone,
     private location: Location,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {
-  }
-
-  goOutlet(fruta?: string) {
-    this.router.navigate(['./', {outlets: {menuoutlet: 'menu'}}], {
-      relativeTo: this.route
-    });
   }
 
   ngOnInit(): void {

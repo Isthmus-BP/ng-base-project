@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./test-list.component.scss"]
 })
 export class TestListComponent implements OnInit {
-  public show: boolean = true;
+  public show: boolean = false;
   constructor() {}
 
   ngOnInit() {

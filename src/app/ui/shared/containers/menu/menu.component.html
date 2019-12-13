@@ -8,6 +8,8 @@
     [opened]="(isHandset$ | async) === false"
     [hidden]="!(isHandset$ | async)"
     [disableClose]="true"
+    [autoFocus]="false"
+    position="end"
   >
     <mat-toolbar
       >Menu

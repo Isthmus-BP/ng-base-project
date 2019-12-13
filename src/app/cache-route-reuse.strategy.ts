@@ -9,29 +9,28 @@ export class CacheRouteReuseStrategy implements RouteReuseStrategy {
       return false;
     }
     let shouldReuse = false;
-    console.log('checking if this route should be re used or not', route);
     if (route.routeConfig.data) {
       route.routeConfig.data.reuse ? shouldReuse = true : shouldReuse = false;
     }
+    console.log('shouldReuse', shouldReuse);
     return shouldReuse;
   }
 
   store(route: ActivatedRouteSnapshot, handler: DetachedRouteHandle): void {
-    console.log('storing handler');
     if (handler) {
       this.handlers[this.getUrl(route)] = handler;
     }
   }
 
   shouldAttach(route: ActivatedRouteSnapshot): boolean {
-    return !!this.handlers[this.getUrl(route)] && routerHistoryManagement.isRouteTop();
+    return !!this.handlers[this.getUrl(route)] && !routerHistoryManagement.isRouteTop();
   }
 
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
     if (!route.routeConfig || route.routeConfig.loadChildren) {
       return null;
     }
-    ;
+    console.log('this.handlers[this.getUrl(route)]', this.handlers[this.getUrl(route)]);
     return this.handlers[this.getUrl(route)];
   }
 
@@ -49,7 +48,6 @@ export class CacheRouteReuseStrategy implements RouteReuseStrategy {
   getUrl(route: ActivatedRouteSnapshot): string {
     if (route.routeConfig) {
       const url = route.routeConfig.path;
-      console.log('returning url', url);
       return url;
     }
   }

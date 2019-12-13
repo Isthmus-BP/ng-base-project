@@ -12,8 +12,8 @@ export class AppComponent implements OnDestroy {
   title = 'base-project';
 
   constructor(private routeHistoryService: RouteHistoryService) {
-    routerHistoryManagement = this.routeHistoryService;
     this.routeHistoryService.init();
+    routerHistoryManagement = this.routeHistoryService;
   }
 
   ngOnDestroy(): void {

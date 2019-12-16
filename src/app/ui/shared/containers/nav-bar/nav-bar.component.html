@@ -1,22 +1,63 @@
-<mat-toolbar [class]="'navbar-travel'">
-  <img src="/assets/logo-promerica.png" height="60%"/>
-  <p class="text-light font-weight-lighter title-nav">| Travel</p>
-  <div class="btn-menu">
-    <button
-      type="button"
-      mat-icon-button
-    >
-      <mat-icon aria-label="Side nav toggle icon">notifications_none</mat-icon>
-    </button>
-    <button
-      type="button"
-      aria-label="Toggle sidenav"
-      mat-icon-button
-      class=""
-      (click)="goOutlet()"
-      *ngIf="isHandset$ | async"
-    >
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
+<mat-toolbar>
+  <div [hidden]="isHandset$ | async" class="container-fluid pt-4">
+    <div class="row">
+      <div class="col-2">
+        <img
+          src="/assets/logo-promerica.png"
+          alt="Logo Banco Promerica"
+          width="55%"
+        />
+        <span class="text-light font-weight-lighter text-nav">
+          |
+          <div class="text-title-box"> 
+            <span class="title-nav">Mundo </span>
+          <span class="title-nav">Travel</span>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <a
+        *ngIf="!(isHandset$ | async)"
+        mat-button
+        color="accent"
+        routerLink="/home/main/page1"
+        >Pagina 1</a
+      >
+      <a
+        *ngIf="!(isHandset$ | async)"
+        mat-button
+        color="accent"
+        routerLink="/home/main/page2"
+        >Pagina 2</a
+      >
+    </div>
+  </div>
+  <div [hidden]="!(isHandset$ | async)">
+    <img src="/assets/logo-promerica.png" height="60%" />
+    <span class="text-light font-weight-lighter text-nav">
+      |
+      <span style="width: 30%;">
+        <span class="title-nav">Mundo </span>
+        <span class="title-nav">Travel</span>
+      </span>
+    </span>
+    <div class="btn-menu">
+      <button type="button" mat-icon-button>
+        <mat-icon aria-label="Side nav toggle icon"
+          >notifications_none</mat-icon
+        >
+      </button>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        class=""
+        (click)="goOutlet()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </div>
   </div>
 </mat-toolbar>

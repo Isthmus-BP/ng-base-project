@@ -1,3 +1,6 @@
+mat-toolbar {
+  height: auto !important;
+}
 .sidenav .mat-toolbar {
   background: inherit;
 }
@@ -13,12 +16,27 @@
   top: 10px;
   position: absolute;
 }
-
-.title-nav {
+.text-nav {
   color: darkgray !important;
   margin: 10px;
   text-align: center;
   vertical-align: center;
 }
+.title-nav {
+  white-space: normal;
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.5em;
+  width: 10%;
+  clip: rect(0px,60px,200px,0px);
+}
+.text-title-box {
+  width: 25%;
+  float: right;
+  display: inline-table;
+}
 
-
+.navbar-travel {
+  padding: 2%;
+  top: 0px;
+}

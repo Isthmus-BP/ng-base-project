@@ -10,7 +10,6 @@ export class TestListComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    alert("TestListComponent");
     setTimeout(() => {
       this.show = true;
     }, 1000);

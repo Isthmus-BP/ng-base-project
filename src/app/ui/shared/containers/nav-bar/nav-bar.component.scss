@@ -21,7 +21,7 @@ mat-toolbar {
   color: darkgray !important;
   text-align: center;
   white-space: normal;
-  line-height: 1.3em;
+  line-height: 1.5em;
   width: 10%;
   font-weight: lighter;
   font-size: 0.8rem;
@@ -49,6 +49,7 @@ mat-toolbar {
   font-size: 1.8rem;
   margin: 2% 0px;
   font-weight: 200;
+  color: dimgray !important;
 }
 
 @media all and (max-width: 840px) {

@@ -16,31 +16,22 @@ mat-toolbar {
   top: 10px;
   position: absolute;
 }
-.text-nav {
-  color: darkgray !important;
-  margin: 10px;
-  text-align: center;
-}
+
 .title-nav {
+  color: darkgray !important;
+  text-align: center;
   white-space: normal;
-  display: block;
+  line-height: 1.3em;
+  width: 10%;
+  font-weight: lighter;
   font-size: 0.8rem;
-  line-height: 1.5em;
-  width: 10%;
-}
-.text-title-box {
-  width: 10%;
-  float: right;
-  display: inline-table;
+  padding: 0px;
+  margin: 0px;
 }
 
-.navbar-travel {
-  padding: 2%;
-  top: 0px;
-}
 .avatar {
   border-radius: 50%;
-  width: 100%;
+  width: 120%;
 }
 .nav-profile-text {
   p, a {
@@ -58,4 +49,13 @@ mat-toolbar {
   font-size: 1.8rem;
   margin: 2% 0px;
   font-weight: 200;
+}
+
+@media all and (max-width: 840px) {
+  .separator {
+    margin: 1% 7px;
+    color: dimgray !important;
+    font-weight: lighter;
+    font-size: 2rem;
+  }
 }

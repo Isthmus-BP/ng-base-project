@@ -10,9 +10,15 @@ import { MenuComponent } from "./containers";
 import { RouterModule } from "@angular/router";
 import { PageComponent } from "./containers/page/page.component";
 import { FooterComponent } from "./containers/footer/footer.component";
+import { SideContentComponent } from "./containers/side-content/side-content.component";
 
 @NgModule({
-  declarations: [MenuComponent, PageComponent, FooterComponent],
+  declarations: [
+    MenuComponent,
+    PageComponent,
+    FooterComponent,
+    SideContentComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -23,6 +29,6 @@ import { FooterComponent } from "./containers/footer/footer.component";
     MatIconModule,
     MatListModule
   ],
-  exports: [MenuComponent, PageComponent, FooterComponent]
+  exports: [MenuComponent, PageComponent, FooterComponent, SideContentComponent]
 })
 export class SharedModule {}

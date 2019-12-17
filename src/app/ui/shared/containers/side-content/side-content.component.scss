@@ -1,0 +1,11 @@
+@import "../../../../../assets/styles/variables";
+
+#margin-right {
+  background: rgba(108, 155, 120, 0.479);
+  margin-right: -$content-padding;
+}
+
+#maring-left {
+  background: rgba(108, 155, 120, 0.479);
+  margin-left: -$content-padding;
+}

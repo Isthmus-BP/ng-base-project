@@ -1,0 +1,9 @@
+@import "../../../../../assets/styles/variables";
+
+#app-footer {
+  height: $footer-heigth;
+  width: 100%;
+  background: #80ba2624;
+  position: absolute;
+  bottom: 0;
+}

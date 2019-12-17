@@ -20,7 +20,6 @@ mat-toolbar {
   color: darkgray !important;
   margin: 10px;
   text-align: center;
-  vertical-align: center;
 }
 .title-nav {
   white-space: normal;
@@ -28,10 +27,9 @@ mat-toolbar {
   font-size: 0.8rem;
   line-height: 1.5em;
   width: 10%;
-  clip: rect(0px,60px,200px,0px);
 }
 .text-title-box {
-  width: 25%;
+  width: 10%;
   float: right;
   display: inline-table;
 }
@@ -39,4 +37,25 @@ mat-toolbar {
 .navbar-travel {
   padding: 2%;
   top: 0px;
+}
+.avatar {
+  border-radius: 50%;
+  width: 100%;
+}
+.nav-profile-text {
+  p, a {
+    padding: 0px;
+    margin: 0px;
+    color: dimgray !important;
+  }
+  color: dimgray !important;
+  font-weight: 300;
+  font-size: 0.8rem;
+  white-space: normal;
+  line-height: 1.5em;
+}
+.separator {
+  font-size: 1.8rem;
+  margin: 2% 0px;
+  font-weight: 200;
 }

@@ -3,11 +3,10 @@
 #page {
   margin-bottom: $footer-heigth;
   display: flow-root;
-  background: rgba(128, 128, 128, 0.062);
 }
 
 img {
-  margin-left: -$content-padding;
+  margin-left: -$content-padding-desktop;
   width: 200px;
   position: absolute;
   z-index: 1;

@@ -1,31 +1,51 @@
 <app-page>
-  <div class="row no-gutters">
-    <div class="col d-none d-md-block">
-      <div
-        style="width: 100%; height: 300px; background: rgba(199, 55, 55, 0.171);"
-      >
-        <span
-          style="position: relative;
+  <div id="portada-desktop" class="d-none d-md-block">
+    <div class="row no-gutters">
+      <div class="col-6">
+        <div style="width: 100%; height: 100%;">
+          <h2
+            style="position: relative;
           float: left;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);"
-          >Bienvendio</span
-        >
+          >
+            Juan, bienvendio a mundo travel
+          </h2>
+        </div>
       </div>
-    </div>
-    <div class="col">
-      <div style="width: 100%; height: 300px; background: green;">
-        <img
-          src="https://image.freepik.com/foto-gratis/al-atardecer-playa-tropical-mar-palmera-coco_74190-1075.jpg"
-          alt="portada"
-          height="100%"
-          width="100%"
-        />
+      <div class="col-6">
+        <div style="width: 100%; background: green; ">
+          <!-- <app-side-content
+            position="right"
+            style="position: absolute; right: 0px; margin-top:-20px"
+          >
+            <div
+              style="width: 350px; height: 350px; background-color: rgba(255, 0, 0, 0.219);"
+            ></div>
+          </app-side-content> -->
+          <img
+            id="imagen-portada"
+            src="https://f4.bcbits.com/img/a3547494768_10.jpg"
+            alt="portada"
+          />
+        </div>
       </div>
     </div>
   </div>
-  <app-side-content>
+  <app-side-content position="all" class="d-block d-md-none">
+    <div style="width: 100%;">
+      <img
+        src="https://f4.bcbits.com/img/a3547494768_10.jpg"
+        alt="portada"
+        height="100%"
+        width="100%"
+      />
+    </div>
+  </app-side-content>
+  <app-buttom>Test</app-buttom>
+
+  <!-- <app-side-content>
     <div
       style="height: 100px; width: 300px; background: red; margin-left: auto;"
     ></div>
@@ -34,9 +54,9 @@
     <div
       style="height: 100px; width: 300px; background: red; margin-right: auto;"
     ></div>
-  </app-side-content>
-  <div class="row">
-    <div class="col-md-6" style="margin: auto">
+  </app-side-content> -->
+  <div class="row no-gutters">
+    <div style="margin: auto">
       <nav mat-tab-nav-bar>
         <a
           mat-tab-link

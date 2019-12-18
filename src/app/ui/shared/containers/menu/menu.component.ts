@@ -1,5 +1,5 @@
 import {AfterContentInit, Component, ElementRef, HostListener, NgZone, OnInit, ViewChild} from '@angular/core';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map, shareReplay} from 'rxjs/operators';
 import {Location} from '@angular/common';
@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
   public marginTopPage;
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe([Breakpoints.Handset, Breakpoints.TabletPortrait])
+    .observe(['(max-width: 767px)'])
     .pipe(
       map(result => result.matches),
       shareReplay()
@@ -71,6 +71,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
     this.marginTopPage = this.navBarComponent.matToolbar._elementRef.nativeElement.offsetHeight;
     this.styleMarginNav.nativeElement.innerHTML = `<style type="text/css"> app-page > div.general-padding { ` +
       ` margin-top: ${this.marginTopPage}px;} </style>`;
+    return (
+      (window.pageYOffset || document.documentElement.scrollTop) -
+      (document.documentElement.clientTop || 0) ===
+      0
+    );
   }
 
   private onHardwareBackButton = () => {

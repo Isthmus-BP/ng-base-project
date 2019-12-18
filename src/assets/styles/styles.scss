@@ -1,0 +1,30 @@
+// /* You can add global styles to this file, and also import other style files */
+// @import "~swiper/dist/css/swiper.min.css";
+
+// If you want to override variables do it here
+@import "variables";
+
+// custom material
+@import "mat.custom";
+
+// If you want to add something do it here
+@import "custom";
+
+html {
+  min-height: 100%;
+  display: flex;
+}
+
+body {
+  min-height: 100%;
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.clickable {
+  cursor: pointer;
+}

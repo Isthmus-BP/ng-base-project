@@ -1,18 +1,18 @@
-import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
-import {map, shareReplay} from 'rxjs/operators';
-import {Location} from '@angular/common';
-import {MatSidenav} from '@angular/material';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, NgZone, OnInit, ViewChild } from "@angular/core";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { Observable } from "rxjs";
+import { map, shareReplay } from "rxjs/operators";
+import { Location } from "@angular/common";
+import { MatSidenav } from "@angular/material";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: "app-menu",
+  templateUrl: "./menu.component.html",
+  styleUrls: ["./menu.component.scss"]
 })
 export class MenuComponent implements OnInit {
-  @ViewChild(MatSidenav, {static: false}) sidenav: MatSidenav;
+  @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe([Breakpoints.Handset, Breakpoints.TabletPortrait])
@@ -27,17 +27,15 @@ export class MenuComponent implements OnInit {
     private location: Location,
     private router: Router,
     private route: ActivatedRoute
-  ) {
-  }
+  ) {}
 
   goOutlet(fruta?: string) {
-    this.router.navigate(['./', {outlets: {menuoutlet: 'menu'}}], {
+    this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {
       relativeTo: this.route
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   goBack() {
     this.location.back();
@@ -51,12 +49,15 @@ export class MenuComponent implements OnInit {
   }
 
   isOnTopPage(): boolean {
-    return ((window.pageYOffset || document.documentElement.scrollTop)
-      - (document.documentElement.clientTop || 0)) === 0;
+    return (
+      (window.pageYOffset || document.documentElement.scrollTop) -
+        (document.documentElement.clientTop || 0) ===
+      0
+    );
   }
 
   private onHardwareBackButton = () => {
     this.sidenav.close();
-    window.removeEventListener('popstate', this.onHardwareBackButton);
+    window.removeEventListener("popstate", this.onHardwareBackButton);
   };
 }

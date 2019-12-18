@@ -9,9 +9,17 @@ import {MatListModule} from '@angular/material/list';
 import {MenuComponent} from './containers';
 import {RouterModule} from '@angular/router';
 import {PageComponent} from './containers/page/page.component';
+import {NavBarComponent} from '@ui/shared/containers/nav-bar/nav-bar.component';
+import {FooterComponent} from '@ui/shared/containers';
+import {ComponentsModule} from '@ui/shared/components/components.module';
 
 @NgModule({
-  declarations: [MenuComponent, PageComponent],
+  declarations: [
+    MenuComponent,
+    PageComponent,
+    NavBarComponent,
+    FooterComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -20,9 +28,14 @@ import {PageComponent} from './containers/page/page.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ComponentsModule,
   ],
-  exports: [MenuComponent, PageComponent]
+  exports: [
+    MenuComponent,
+    PageComponent,
+    FooterComponent,
+  ],
 })
 export class SharedModule {
 }

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar #navbar [class.sticky]="activeSticky" >
   <div *ngIf="!(isHandset$ | async)" class="container-fluid pt-3">
     <!--    Inicio de Barra para Desktop-->
     <div class="row">
@@ -17,15 +17,13 @@
       </div>
       <div class="offset-6 col-3">
         <div class="row nav-profile-text">
-          <span class="offset-2 col-2">
-            <img alt="Avatar de Usuario" class="avatar" src="assets/avatar.jpg"/>
-          </span>
-          <span class="col-5">
-            <p>Antonio Xocoy Rosales</p>
-            <a class="font-weight-normal" href="#">Ver perfil</a>
-          </span>
+          <div class="offset-2 col-8">
+            <app-profile-chip (goToProfile)="onClickToChip()"
+                              [userName]="'Antonio Xocoy Rosales'">
+            </app-profile-chip>
+          </div>
           <span class="col-1 p-0 separator">|</span>
-          <button class="col-2 p-0" mat-icon-button type="button">
+          <button class="col-1 p-0" mat-icon-button type="button">
             <mat-icon aria-label="Side nav toggle icon">notifications_none</mat-icon>
           </button>
         </div>
@@ -45,7 +43,7 @@
   </div>
   <!-- ---------- Fin de Barra para Desktop ---------- -->
   <!--    Inicio de Barra para Mobile-->
-  <div *ngIf="(isHandset$ | async)" class="container-fluid pt-1">
+  <div *ngIf="(isHandset$ | async)" class="container-fluid pt-1 pb-1">
     <div class="row">
       <div class="col-6 p-1">
         <div class="row">

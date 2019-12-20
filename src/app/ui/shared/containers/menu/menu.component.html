@@ -1,76 +1,43 @@
+<div #styleMarginNav></div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
-    class="sidenav"
-    fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [autoFocus]="false"
+    [disableClose]="true"
+    [hidden]="!(isHandset$ | async)"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
-    [hidden]="!(isHandset$ | async)"
-    [disableClose]="true"
-    [autoFocus]="false"
+    class="sidenav"
+    fixedInViewport
     position="end"
   >
     <mat-toolbar
-      >Menu
+    >Menu
       <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
         (click)="goBack()"
         *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button"
       >
         <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item (click)="irPantalla('/home/main/page1')">Pagina 1</a>
-      <a mat-list-item (click)="irPantalla('/home/main/page2')">Pagina 2</a>
+      <a (click)="irPantalla('/home/main/page1')" mat-list-item>Pagina 1</a>
+      <a (click)="irPantalla('/home/main/page2')" mat-list-item>Pagina 2</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar [class]="'navbar-travel'">
-      <img src="/assets/logo-promerica.png" height="70%" />
-      <p class="text-light font-weight-lighter title-nav">| Travel</p>
-      <a
-        *ngIf="!(isHandset$ | async)"
-        mat-button
-        color="accent"
-        routerLink="/home/main/page1"
-        >Pagina 1</a
-      >
-      <a
-        *ngIf="!(isHandset$ | async)"
-        mat-button
-        color="accent"
-        routerLink="/home/main/page2"
-        >Pagina 2</a
-      >
-      <div class="btn-menu">
-        <button type="button" mat-icon-button>
-          <mat-icon aria-label="Side nav toggle icon"
-            >notifications_none</mat-icon
-          >
-        </button>
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          class=""
-          (click)="goOutlet()"
-          *ngIf="isHandset$ | async"
-        >
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
+    <app-nav-bar #navBarComponent class="fixed-top"></app-nav-bar>
+    <router-outlet [style.margin-top.px]="marginTopPage"> </router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <router-outlet
-  name="menuoutlet"
   (activate)="drawer.toggle()"
   (deactivate)="drawer.toggle()"
+  name="menuoutlet"
 ></router-outlet>

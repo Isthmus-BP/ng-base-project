@@ -1,0 +1,82 @@
+<mat-toolbar #navbar >
+  <div *ngIf="!(isHandset$ | async)" class="container-fluid pt-3">
+    <!--    Inicio de Barra para Desktop-->
+    <div class="row">
+      <div class="col-3 row">
+        <div class="col-7 p-0">
+          <img
+            alt="Logo Banco Promerica"
+            src="/assets/logo-promerica-desktop.png"
+            width="95%"/>
+        </div>
+        <div class="col-1 separator">|</div>
+        <div class="col-3 p-0 mt-1 mb-1">
+          <p class="title-nav">Mundo </p>
+          <p class="title-nav">Travel</p>
+        </div>
+      </div>
+      <div class="offset-6 col-3">
+        <div class="row nav-profile-text">
+          <div class="offset-2 col-8">
+            <app-profile-chip (goToProfile)="onClickToChip()"
+                              [userName]="'Antonio Xocoy Rosales'">
+            </app-profile-chip>
+          </div>
+          <span class="col-1 p-0 separator">|</span>
+          <button class="col-1 p-0" mat-icon-button type="button">
+            <mat-icon aria-label="Side nav toggle icon">notifications_none</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <a *ngIf="!(isHandset$ | async)"
+         color="accent"
+         mat-button
+         routerLink="/home/main/page1">Pagina 1</a>
+      <a *ngIf="!(isHandset$ | async)"
+         color="accent"
+         mat-button
+         routerLink="/home/main/page2">Pagina 2</a>
+    </div>
+  </div>
+  <!-- ---------- Fin de Barra para Desktop ---------- -->
+  <!--    Inicio de Barra para Mobile-->
+  <div *ngIf="(isHandset$ | async)" class="container-fluid pt-1 pb-1">
+    <div class="row">
+      <div class="col-6 p-1">
+        <div class="row">
+          <div class="col-5 p-0">
+            <img src="/assets/logo-promerica.png" width="100%"/>
+          </div>
+          <div class="col-1 p-0">
+            <span class="separator">|</span>
+          </div>
+          <div class="col-5 p-0">
+            <div class="text-light text-title-box align-self-center">
+              <p class="title-nav">Mundo</p>
+              <p class="title-nav">Travel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-menu">
+        <button mat-icon-button type="button">
+          <mat-icon aria-label="Side nav toggle icon">notifications_none
+          </mat-icon>
+        </button>
+        <button
+          (click)="goOutlet()"
+          *ngIf="isHandset$ | async"
+          aria-label="Toggle sidenav"
+          class=""
+          mat-icon-button
+          type="button">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ---------- Fin de Barra para Mobile ---------- -->
+</mat-toolbar>

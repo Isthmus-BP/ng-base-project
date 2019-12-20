@@ -1,0 +1,13 @@
+@import "../../../../assets/styles/variables";
+
+#page {
+  margin-bottom: $footer-heigth;
+  display: flow-root;
+}
+
+img {
+  margin-left: -$content-padding-desktop;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+}

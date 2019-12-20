@@ -1,42 +1,38 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MenuComponent } from "@ui/menu/menu.component";
+import { MenuComponent, EmptyComponent } from "@ui/menu";
+import { MenuGuard } from "@ui/guards";
 
 export const routes: Routes = [
   {
     path: "",
-    component: MenuComponent
-    // children: [
-    //   {
-    //     path: "",
-    //     pathMatch: "full",
-    //     redirectTo: "dashboard"
-    //   },
-    //   {
-    //     path: "dashboard",
-    //     loadChildren: "@ui/dashboard/dashboard.module#DashboardModule"
-    //   },
-    //   {
-    //     path: "proyecto",
-    //     loadChildren: "@ui/proyecto/proyecto.module#ProyectoModule"
-    //   },
-    //   {
-    //     path: "propietario",
-    //     loadChildren: "@ui/propietario/propietario.module#PropietarioModule"
-    //   },
-    //   {
-    //     path: "transaccion",
-    //     loadChildren: "@ui/transaccion/transaccion.module#TransaccionModule"
-    //   },
-    //   {
-    //     path: "actividad",
-    //     loadChildren: "@ui/actividad/actividad.module#ActividadModule"
-    //   },
-    //   {
-    //     path: "material",
-    //     loadChildren: "@ui/material/material.module#MaterialModule"
-    //   }
-    // ]
+    pathMatch: "full",
+    redirectTo: "app"
+  },
+  {
+    path: "app",
+    component: MenuComponent,
+    children: [
+      {
+        path: "menu",
+        component: EmptyComponent,
+        outlet: "menuoutlet",
+        canActivate: [MenuGuard]
+      },
+      {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "inicio"
+      },
+      {
+        path: "inicio",
+        loadChildren: "@ui/inicio/inicio.module#InicioModule"
+      },
+      {
+        path: "promociones",
+        loadChildren: "@ui/promociones/promociones.module#PromocionesModule"
+      }
+    ]
   }
 ];
 

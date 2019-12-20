@@ -9,7 +9,7 @@ import { DetailComponent } from "./detail/detail.component";
 import { TestDetailComponent } from "./test-detail/test-detail.component";
 import { TestListComponent } from "./test-list/test-list.component";
 import { MenuGuard } from "@ui/guards";
-import { EmptyComponent } from "@ui/shared/components";
+// import { EmptyComponent } from "@ui/shared/components";
 
 const routes: Routes = [
   { path: "", redirectTo: "main", pathMatch: "full" },
@@ -17,12 +17,12 @@ const routes: Routes = [
     path: "main",
     component: HomeComponent,
     children: [
-      {
-        path: "menu",
-        component: EmptyComponent,
-        outlet: "menuoutlet",
-        canActivate: [MenuGuard]
-      },
+      // {
+      //   path: "menu",
+      //   component: EmptyComponent,
+      //   outlet: "menuoutlet",
+      //   canActivate: [MenuGuard]
+      // },
       { path: "", redirectTo: "page1", pathMatch: "full" },
       {
         path: "page1",

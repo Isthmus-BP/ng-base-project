@@ -1,38 +1,51 @@
-import {NgModule} from '@angular/core';
-import {RouteReuseStrategy, RouterModule, Routes} from '@angular/router';
-import {DetailComponent} from './detail/detail.component';
-import {ListComponent} from './list/list.component';
-import {CacheRouteReuseStrategy} from './cache-route-reuse.strategy';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { MenuComponent } from "@ui/menu/menu.component";
 
-const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+export const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('@ui/home/home.module').then(m => m.HomeModule)
-  },
-  {
-    path: 'detail',
-    component: DetailComponent
-  },
-  {
-    path: 'list',
-    component: ListComponent
+    path: "",
+    component: MenuComponent
+    // children: [
+    //   {
+    //     path: "",
+    //     pathMatch: "full",
+    //     redirectTo: "dashboard"
+    //   },
+    //   {
+    //     path: "dashboard",
+    //     loadChildren: "@ui/dashboard/dashboard.module#DashboardModule"
+    //   },
+    //   {
+    //     path: "proyecto",
+    //     loadChildren: "@ui/proyecto/proyecto.module#ProyectoModule"
+    //   },
+    //   {
+    //     path: "propietario",
+    //     loadChildren: "@ui/propietario/propietario.module#PropietarioModule"
+    //   },
+    //   {
+    //     path: "transaccion",
+    //     loadChildren: "@ui/transaccion/transaccion.module#TransaccionModule"
+    //   },
+    //   {
+    //     path: "actividad",
+    //     loadChildren: "@ui/actividad/actividad.module#ActividadModule"
+    //   },
+    //   {
+    //     path: "material",
+    //     loadChildren: "@ui/material/material.module#MaterialModule"
+    //   }
+    // ]
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'enabled'
+      scrollPositionRestoration: "enabled"
     })
   ],
-  exports: [RouterModule],
-  providers: [
-    {
-      provide: RouteReuseStrategy,
-      useClass: CacheRouteReuseStrategy
-    }
-  ]
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

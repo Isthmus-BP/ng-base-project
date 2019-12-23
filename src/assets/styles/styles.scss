@@ -10,35 +10,40 @@
 // If you want to add something do it here
 @import "custom";
 
-html {
-  min-height: 100%;
-  display: flex;
-}
+// html {
+//   min-height: 100%;
+//   display: flex;
+// }
 
-body {
-  min-height: 100%;
-  flex: 1;
-}
+// body {
+//   min-height: 100%;
+//   flex: 1;
+// }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 .clickable {
   cursor: pointer;
 }
 
-.sticky-container {
-  justify-content: space-around;
-}
+// .sticky-container {
+//   justify-content: space-around;
+// }
 
-.sticky {
-  mat-toolbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-}
-
+// .sticky {
+//   mat-toolbar {
+//     position: -webkit-sticky;
+//     position: sticky;
+//     top: 0;
+//     z-index: 100;
+//   }
+// }

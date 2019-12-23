@@ -5,9 +5,22 @@ import {
   FooterModule,
   ButtonModule
 } from "@ui/shared";
+import { HeaderModule } from "../shared/header/header.module";
 
 @NgModule({
-  imports: [PageModule, SideContentModule, FooterModule, ButtonModule],
-  exports: [PageModule, SideContentModule, FooterModule, ButtonModule]
+  imports: [
+    PageModule,
+    SideContentModule,
+    FooterModule,
+    ButtonModule,
+    HeaderModule
+  ],
+  exports: [
+    PageModule,
+    SideContentModule,
+    FooterModule,
+    ButtonModule,
+    HeaderModule
+  ]
 })
 export class InicioSharedModule {}

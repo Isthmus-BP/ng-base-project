@@ -1,4 +1,3 @@
-<div #styleMarginNav></div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -31,8 +30,8 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-nav-bar #navBarComponent class="fixed-top"></app-nav-bar>
-    <router-outlet [style.margin-top.px]="marginTopPage"> </router-outlet>
+    <!-- <app-nav-bar #navBarComponent class="fixed-top"></app-nav-bar> -->
+    <router-outlet> </router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

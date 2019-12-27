@@ -31,6 +31,10 @@ export const routes: Routes = [
       {
         path: "promociones",
         loadChildren: "@ui/promociones/promociones.module#PromocionesModule"
+      },
+      {
+        path: "perfil",
+        loadChildren: "@ui/perfil/perfil.module#PerfilModule"
       }
     ]
   }

@@ -1,7 +1,6 @@
 @import "../../../../assets/styles/variables";
 
 .right {
-  background: rgba(108, 155, 120, 0.479);
   margin-right: -$content-padding-desktop;
   @media only screen and (max-width: $mobile-breakpoint) {
     margin-right: -$content-padding-mobile;
@@ -9,7 +8,6 @@
 }
 
 .left {
-  background: rgba(108, 155, 120, 0.479);
   margin-left: -$content-padding-desktop;
   @media only screen and (max-width: $mobile-breakpoint) {
     margin-left: -$content-padding-mobile;
@@ -17,7 +15,6 @@
 }
 
 .all {
-  background: rgba(108, 155, 120, 0.479);
   margin-left: -$content-padding-desktop;
   margin-right: -$content-padding-desktop;
 

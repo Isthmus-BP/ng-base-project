@@ -1,8 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
-import { PromocionesRoutingModule } from "./promociones-routing.module";
-import { PromocionesComponent } from "./promociones.component";
+import { PerfilComponent } from "./perfil.component";
 import {
   ContentModule,
   SideContentModule,
@@ -10,12 +8,14 @@ import {
   ButtonModule,
   HeaderModule
 } from "@ui/shared";
+import { GeneralComponent } from "./general/general.component";
+import { PerfilRoutingModule } from "./perfin-routing.module";
 
 @NgModule({
-  declarations: [PromocionesComponent],
+  declarations: [PerfilComponent, GeneralComponent],
   imports: [
     CommonModule,
-    PromocionesRoutingModule,
+    PerfilRoutingModule,
     //#region Shared
     ContentModule,
     SideContentModule,
@@ -25,4 +25,4 @@ import {
     //#endregion Shared
   ]
 })
-export class PromocionesModule {}
+export class PerfilModule {}

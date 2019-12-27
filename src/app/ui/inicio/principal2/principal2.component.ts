@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { SwiperDirective } from "ngx-swiper-wrapper";
 
 @Component({
-  selector: "app-page2",
-  templateUrl: "./page2.component.html",
-  styleUrls: ["./page2.component.scss"]
+  selector: "app-principal2",
+  templateUrl: "./principal2.component.html",
+  styleUrls: ["./principal2.component.scss"]
 })
-export class Page2Component implements OnInit {
+export class Principal2Component implements OnInit {
   public animationClass = "";
   @ViewChild(SwiperDirective, { static: false }) cardSwiper: SwiperDirective;
   config: any = {

@@ -1,6 +1,8 @@
-export { SideContentModule } from "./side-content/side-content.module";
+export { HeaderModule } from "./header/header.module";
 
-export { PageModule } from "./page/page.module";
+export { ContentModule } from "./content/content.module";
+
+export { SideContentModule } from "./side-content/side-content.module";
 
 export { FooterModule } from "./footer/footer.module";
 

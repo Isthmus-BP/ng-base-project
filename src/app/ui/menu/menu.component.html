@@ -24,8 +24,16 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <a (click)="irPantalla('/app/inicio')" mat-list-item>Inicio</a>
-      <a (click)="irPantalla('/app/promociones')" mat-list-item>Promociones</a>
+      <!-- <button mat-button *ngFor="let i of navItems" [routerLink]="i.url">
+        {{ i.name }}
+      </button> -->
+
+      <a
+        *ngFor="let item of navItems"
+        (click)="irPantalla(item.url)"
+        mat-list-item
+        >{{ item.name }}</a
+      >
     </mat-nav-list>
   </mat-sidenav>
 

@@ -18,6 +18,7 @@ import {
   NavigationStart,
   NavigationEnd
 } from "@angular/router";
+import { navItems } from "@app/_nav";
 // import { NavBarComponent } from "@ui/shared/containers/nav-bar/nav-bar.component";
 
 @Component({
@@ -26,6 +27,7 @@ import {
   styleUrls: ["./menu.component.scss"]
 })
 export class MenuComponent implements OnInit {
+  public navItems = navItems;
   @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
   // @ViewChild("navBarComponent", { static: false })
   // navBarComponent: NavBarComponent;

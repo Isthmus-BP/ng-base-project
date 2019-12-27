@@ -13,6 +13,7 @@ import { RouterModule } from "@angular/router";
 import { NavBarComponent } from "@ui/menu/nav-bar/nav-bar.component";
 import { ProfileChipComponent } from "@ui/menu/profile-chip/profile-chip.component";
 import { EmptyComponent } from "@ui/menu/empty/empty.component";
+import { MenuRoutingModule } from "./menu-routing.module";
 
 @NgModule({
   declarations: [
@@ -23,12 +24,15 @@ import { EmptyComponent } from "@ui/menu/empty/empty.component";
   ],
   imports: [
     CommonModule,
+    MenuRoutingModule,
+    RouterModule,
+    //#region Material
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    RouterModule
+    MatListModule
+    //#endregion Material
   ],
   exports: [MenuComponent, EmptyComponent]
 })

@@ -1,1 +1,9 @@
-<mat-toolbar color="accent"><ng-content></ng-content></mat-toolbar>
+<mat-toolbar color="accent">
+  <div
+    style="background-color: rgba(0, 255, 34, 0.185); width: 100%;"
+    class="general-padding"
+  >
+    <ng-content></ng-content>
+    <span (click)="goOutlet()" style="float: right;">Menu</span>
+  </div>
+</mat-toolbar>

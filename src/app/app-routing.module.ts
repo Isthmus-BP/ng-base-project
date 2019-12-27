@@ -6,37 +6,7 @@ import { MenuGuard } from "@ui/guards";
 export const routes: Routes = [
   {
     path: "",
-    pathMatch: "full",
-    redirectTo: "app"
-  },
-  {
-    path: "app",
-    component: MenuComponent,
-    children: [
-      {
-        path: "menu",
-        component: EmptyComponent,
-        outlet: "menuoutlet",
-        canActivate: [MenuGuard]
-      },
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "inicio"
-      },
-      {
-        path: "inicio",
-        loadChildren: "@ui/inicio/inicio.module#InicioModule"
-      },
-      {
-        path: "promociones",
-        loadChildren: "@ui/promociones/promociones.module#PromocionesModule"
-      },
-      {
-        path: "perfil",
-        loadChildren: "@ui/perfil/perfil.module#PerfilModule"
-      }
-    ]
+    loadChildren: () => import("@ui/menu/menu.module").then(m => m.MenuModule)
   }
 ];
 

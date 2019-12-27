@@ -47,11 +47,11 @@ export class MenuComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  goOutlet(fruta?: string) {
-    this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {
-      relativeTo: this.route
-    });
-  }
+  // goOutlet(fruta?: string) {
+  //   this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {
+  //     relativeTo: this.route
+  //   });
+  // }
 
   // ngOnInit(): void {}
 

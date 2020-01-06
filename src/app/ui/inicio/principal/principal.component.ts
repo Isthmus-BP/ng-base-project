@@ -6,7 +6,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./principal.component.scss"]
 })
 export class PrincipalComponent implements OnInit {
+  show: boolean = false;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      this.show = true;
+    }, 2000);
+  }
 }

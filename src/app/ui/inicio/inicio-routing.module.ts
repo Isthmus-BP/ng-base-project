@@ -9,7 +9,17 @@ const routes: Routes = [
     path: "",
     component: InicioComponent,
     children: [
-      { path: "", component: PrincipalComponent },
+      {
+        path: "",
+        redirectTo: "principal"
+      },
+      {
+        path: "principal",
+        component: PrincipalComponent,
+        data: {
+          reuse: true
+        }
+      },
       { path: "principal2", component: Principal2Component }
     ]
   }

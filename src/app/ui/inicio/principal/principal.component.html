@@ -1,5 +1,5 @@
 <app-header>Inicio</app-header>
-<app-content mostrarOrigami="true">
+<app-content mostrarOrigami="true" *ngIf="show">
   <div id="portada-desktop" class="d-none d-md-block">
     <div class="row no-gutters">
       <div class="col-6">
@@ -45,17 +45,13 @@
       <!-- https://css-tricks.com/sticky-smooth-active-nav/ -->
     </div>
   </app-side-content>
-  <app-header>Inicio</app-header>
   <br />
   <p>test1</p>
   <app-button routerLink="/app/perfil">perfil</app-button>
   <p>test</p>
 
   <p>test</p>
-  <div style="height: 500px; width: 100%; background-color: blue;">
-    test
-    <app-header>Inicio</app-header>
-  </div>
+
   <p>test</p>
   <p>test</p>
   <p>test</p>
@@ -64,7 +60,6 @@
   <p>test</p>
   <p>test</p>
   <p>test</p>
-  <app-header>Inicio</app-header>
   <p>test</p>
   <p>test</p>
   <p>test</p>
@@ -75,4 +70,7 @@
   <p>test</p>
   <app-button routerLink="/app/inicio/principal2">Guardar</app-button>
 </app-content>
+<div *ngIf="!show">
+  cargando...
+</div>
 <app-footer></app-footer>

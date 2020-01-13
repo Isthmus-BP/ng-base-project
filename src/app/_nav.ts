@@ -1,7 +1,7 @@
 export interface NavData {
-  name?: string;
-  url?: string;
-  icon?: string;
+  name: string;
+  url: string;
+  icon: string;
 }
 
 export const navItems: NavData[] = [

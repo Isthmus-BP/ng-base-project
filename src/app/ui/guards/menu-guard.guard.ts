@@ -8,12 +8,18 @@ import {
   ActivatedRoute
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { UtilService } from "@app/services";
 
 @Injectable({
   providedIn: "root"
 })
 export class MenuGuard implements CanActivate {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private util: UtilService
+  ) {}
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -35,6 +41,6 @@ export class MenuGuard implements CanActivate {
   }
 
   clearUrl(url: string) {
-    return url.split("//")[0].replace("(", "");
+    return this.util.clearUrl(url);
   }
 }

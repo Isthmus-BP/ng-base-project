@@ -1,5 +1,47 @@
 <app-header>Inicio</app-header>
 <app-content mostrarOrigami="true" *ngIf="show">
+  <button (click)="next()">ver</button>
+  <app-side-content position="all">
+    <div
+      class="swiper-container"
+      [swiper]="config"
+      (reachBeginning)="guardFirst($event)"
+      (reachEnd)="guardLast($event)"
+    >
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          style="width: 230px; height: 230px; background-color: rgba(255, 0, 0, 0.267);"
+        >
+          Swiper slide content
+        </div>
+        <div
+          class="swiper-slide"
+          style="width: 230px; height: 230px; background-color: rgba(255, 0, 0, 0.267);"
+        >
+          Swiper slide content
+        </div>
+        <div
+          class="swiper-slide"
+          style="width: 230px; height: 230px; background-color: rgba(255, 0, 0, 0.267);"
+        >
+          Swiper slide content
+        </div>
+        <div
+          class="swiper-slide"
+          style="width: 230px; height: 230px; background-color: rgba(255, 0, 0, 0.267);"
+        >
+          Swiper slide content
+        </div>
+      </div>
+
+      <div class="swiper-scrollbar"></div>
+      <div class="swiper-pagination"></div>
+
+      <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+    </div>
+  </app-side-content>
   <div id="portada-desktop" class="d-none d-md-block">
     <div class="row no-gutters">
       <div class="col-6">
@@ -49,6 +91,8 @@
   <p>test1</p>
   <app-button routerLink="/app/perfil">perfil</app-button>
   <p>test</p>
+
+  <button (click)="next()">next</button>
 
   <p>test</p>
 

@@ -29,11 +29,12 @@
       </button> -->
 
       <a
+        [class.active-item]="slectedPath.includes(item.url)"
         *ngFor="let item of navItems"
         (click)="irPantalla(item.url)"
         mat-list-item
-        >{{ item.name }}</a
-      >
+        >{{ item.name }}
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 

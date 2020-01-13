@@ -16,9 +16,11 @@ import {
   ActivatedRoute,
   Router,
   NavigationStart,
-  NavigationEnd
+  NavigationEnd,
+  RouterEvent
 } from "@angular/router";
 import { navItems } from "@app/_nav";
+import { UtilService } from "@app/services";
 // import { NavBarComponent } from "@ui/shared/containers/nav-bar/nav-bar.component";
 
 @Component({
@@ -29,6 +31,7 @@ import { navItems } from "@app/_nav";
 export class MenuComponent implements OnInit {
   public navItems = navItems;
   @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
+  slectedPath: string = "";
   // @ViewChild("navBarComponent", { static: false })
   // navBarComponent: NavBarComponent;
   // @ViewChild("styleMarginNav", { static: false }) styleMarginNav: ElementRef;
@@ -46,8 +49,15 @@ export class MenuComponent implements OnInit {
     private zone: NgZone,
     private location: Location,
     private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private util: UtilService
+  ) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event.url) {
+        this.slectedPath = this.util.clearUrl(event.url);
+      }
+    });
+  }
 
   // goOutlet(fruta?: string) {
   //   this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {

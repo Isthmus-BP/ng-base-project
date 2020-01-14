@@ -18,7 +18,7 @@ import {
   NavigationStart,
   NavigationEnd
 } from "@angular/router";
-import { navItems } from "@app/_nav";
+import { navItems } from "@ui/shared/header/_nav";
 // import { NavBarComponent } from "@ui/shared/containers/nav-bar/nav-bar.component";
 
 @Component({

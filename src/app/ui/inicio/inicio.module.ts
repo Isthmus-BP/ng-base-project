@@ -12,8 +12,9 @@ import {
 } from "@ui/shared";
 import { PrincipalComponent } from "./principal/principal.component";
 import { Principal2Component } from "./principal2/principal2.component";
-import { MatTabsModule } from "@angular/material";
+import {MatButtonModule, MatDialogModule, MatTabsModule} from '@angular/material';
 import { SwiperModule } from "ngx-swiper-wrapper";
+import {TimePickerModule} from '@ui/shared/time-picker/time-picker.module';
 
 @NgModule({
   declarations: [InicioComponent, PrincipalComponent, Principal2Component],
@@ -27,9 +28,12 @@ import { SwiperModule } from "ngx-swiper-wrapper";
     FooterModule,
     ButtonModule,
     HeaderModule,
+    TimePickerModule,
+    MatDialogModule,
     //#endregion Shared
     //#region Marerial
-    MatTabsModule
+    MatTabsModule,
+    MatButtonModule,
     //#endregion Material
   ]
 })

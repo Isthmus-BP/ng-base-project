@@ -1,0 +1,72 @@
+<div class="container-fluid time-picker">
+  <div class="row">
+    <strong class="m-1">Selecciona la hora</strong>
+  </div>
+  <div
+    class="row justify-content-center align-content-center align-items-center h-auto"
+  >
+    <div class="col p-0 m-2" style="height: 180px">
+      <i class="material-icons m-auto w-100 text-center">keyboard_arrow_up</i>
+      <swiper [config]="config" class="item-picker">
+        <div
+          *ngFor="let hour of Array.from({ length: 12 }); let i = index"
+          class="swiper-slide pl-1 pr-1"
+        >
+          {{ (i + 1).toString().length > 1 ? i + 1 : "0" + (i + 1) }}
+        </div>
+      </swiper>
+      <i class="material-icons m-auto w-100 text-center">
+        keyboard_arrow_down
+      </i>
+    </div>
+    <strong>:</strong>
+    <div class="col p-0" style="height: 180px">
+      <i class="material-icons m-auto w-100 text-center">keyboard_arrow_up</i>
+      <swiper [config]="config" class="item-picker">
+        <div
+          *ngFor="let hour of Array.from({ length: 60 }); let i = index"
+          class="swiper-slide pl-1 pr-1"
+        >
+          {{ i.toString().length > 1 ? i : "0" + i }}
+        </div>
+      </swiper>
+      <i class="material-icons m-auto w-100 text-center">
+        keyboard_arrow_down
+      </i>
+    </div>
+    <strong>:</strong>
+    <div class="col p-0" style="height: 180px">
+      <i class="material-icons m-auto w-100 text-center">keyboard_arrow_up</i>
+      <swiper [config]="config" class="item-picker">
+        <div
+          *ngFor="let hour of Array.from({ length: 60 }); let i = index"
+          class="swiper-slide pl-1 pr-1"
+        >
+          {{ i.toString().length > 1 ? i : "0" + i }}
+        </div>
+      </swiper>
+      <i class="material-icons m-auto w-100 text-center">
+        keyboard_arrow_down
+      </i>
+    </div>
+    <div class="col p-0" style="height: 180px">
+      <i class="material-icons m-auto w-100 text-center">keyboard_arrow_up</i>
+      <swiper [config]="config" class="item-picker">
+        <div class="swiper-slide pl-1 pr-1">
+          <span class="h5">AM</span>
+        </div>
+        <div class="swiper-slide pl-1 pr-1">
+          <span class="h5">PM</span>
+        </div>
+      </swiper>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button mat-button>Cerrar</button>
+    </div>
+    <div class="col-6">
+      <button mat-button>Aceptar</button>
+    </div>
+  </div>
+</div>

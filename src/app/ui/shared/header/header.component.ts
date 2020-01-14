@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { navItems } from "@app/_nav";
+import { navItems } from "@ui/shared/header/_nav";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",

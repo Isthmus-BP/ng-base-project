@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MenuComponent } from "./menu.component";
-import { MatModule } from "@ui/mat.module";
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -10,18 +9,11 @@ import {
   MatListModule
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
-import { NavBarComponent } from "@ui/menu/nav-bar/nav-bar.component";
-import { ProfileChipComponent } from "@ui/menu/profile-chip/profile-chip.component";
 import { EmptyComponent } from "@ui/menu/empty/empty.component";
 import { MenuRoutingModule } from "./menu-routing.module";
 
 @NgModule({
-  declarations: [
-    MenuComponent,
-    NavBarComponent,
-    ProfileChipComponent,
-    EmptyComponent
-  ],
+  declarations: [MenuComponent, EmptyComponent],
   imports: [
     CommonModule,
     MenuRoutingModule,

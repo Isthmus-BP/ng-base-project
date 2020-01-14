@@ -7,7 +7,7 @@ export interface NavData {
 export const navItems: NavData[] = [
   {
     name: "Inicio",
-    url: "/app/inicio",
+    url: "/app/inicio/principal",
     icon: "icon-speedometer"
   },
   {

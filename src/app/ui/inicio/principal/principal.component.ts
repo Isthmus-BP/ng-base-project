@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import {MatDialog, MatDialogRef} from '@angular/material';
+import {TimePickerComponent} from '@ui/shared/time-picker/time-picker.component';
 
 @Component({
   selector: "app-principal",
@@ -7,7 +9,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 })
 export class PrincipalComponent implements OnInit {
   show: boolean = false;
-  constructor(private elem: ElementRef) {}
+  constructor(private elem: ElementRef, private dialog: MatDialog) {}
 
   ngOnInit() {
     setTimeout(() => {
@@ -19,6 +21,10 @@ export class PrincipalComponent implements OnInit {
         // myswiper.setTranslate(0);
       });
     }, 500);
+  }
+
+  openTimePicker() {
+    this.dialog.open(TimePickerComponent);
   }
 
   config: any = {

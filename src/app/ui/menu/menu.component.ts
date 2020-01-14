@@ -19,7 +19,7 @@ import {
   NavigationEnd,
   RouterEvent
 } from "@angular/router";
-import { navItems } from "@app/_nav";
+import { navItems } from "@ui/shared/header/_nav";
 import { UtilService } from "@app/services";
 // import { NavBarComponent } from "@ui/shared/containers/nav-bar/nav-bar.component";
 

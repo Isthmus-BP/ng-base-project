@@ -1,0 +1,29 @@
+@import '~swiper/dist/css/swiper.min.css';
+.card-active {
+  font-weight: bold;
+  border-top: 1px solid #e3e3e3;
+  border-bottom:1px solid #e3e3e3;
+  color: black;
+  transition: 600ms;
+  font-size: 1.2rem;
+}
+
+.item-picker {
+  text-align: center;
+  color: #676767;
+  max-height: 350px;
+  min-height: 200px;
+}
+
+::ng-deep .time-picker .swiper-button-prev {
+  height: 25px !important;
+  //background: white;
+  box-shadow: 3px 46px 5px 0px white;
+  top: 0px !important;
+}
+::ng-deep .time-picker .swiper-button-next {
+  height: 25px !important;
+  box-shadow: -1px -40px 5px 0px white;
+  //background: white;
+  bottom: 0px !important;
+}

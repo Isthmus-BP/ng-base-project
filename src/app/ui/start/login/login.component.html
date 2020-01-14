@@ -1,0 +1,46 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="mainForm" id="mainForm">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <input
+              required
+              matInput
+              placeholder="User"
+              formControlName="user"
+            />
+            <mat-error *ngIf="hasError('user', 'required')">
+              Usuario es requerida.
+            </mat-error>
+            <mat-error *ngIf="hasError('user', 'maxlength')">
+              Usuario no puede superar los 80 caracteres.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <input
+              required
+              matInput
+              placeholder="Password"
+              formControlName="password"
+            />
+            <mat-error *ngIf="hasError('password', 'required')">
+              Constrasena es requerida.
+            </mat-error>
+            <mat-error *ngIf="hasError('password', 'maxlength')">
+              Constrasena no puede superar los 80 caracteres.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"><app-button>Crear Usuario</app-button></div>
+    <div class="col-md-4">
+      <app-button (click)="onSubmit()" [type]="'submit'">Ingresar</app-button>
+    </div>
+  </div>
+</form>

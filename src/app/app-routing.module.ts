@@ -7,6 +7,11 @@ export const routes: Routes = [
   {
     path: "",
     loadChildren: () => import("@ui/menu/menu.module").then(m => m.MenuModule)
+  },
+  {
+    path: "start",
+    loadChildren: () =>
+      import("@ui/start/start.module").then(m => m.StartModule)
   }
 ];
 

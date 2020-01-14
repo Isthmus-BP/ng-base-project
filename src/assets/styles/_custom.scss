@@ -2,14 +2,14 @@
 
 // Padding del app
 .general-padding {
-  padding-left: $content-padding-desktop;
-  padding-right: $content-padding-desktop;
+  padding-left: $content-padding-desktop !important;
+  padding-right: $content-padding-desktop !important;
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
   .general-padding {
-    padding-left: $content-padding-mobile;
-    padding-right: $content-padding-mobile;
+    padding-left: $content-padding-mobile !important;
+    padding-right: $content-padding-mobile !important;
   }
 }
 

@@ -13,9 +13,10 @@ import {
 } from "../shared";
 import { MatModule } from "../mat.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
-  declarations: [StartComponent, LoginComponent],
+  declarations: [StartComponent, LoginComponent, CreateUserComponent],
   imports: [
     CommonModule,
     StartRoutingModule,

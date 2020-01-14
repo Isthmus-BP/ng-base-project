@@ -5,11 +5,11 @@ import { MenuGuard } from "@ui/guards";
 
 export const routes: Routes = [
   {
-    path: "",
+    path: "app",
     loadChildren: () => import("@ui/menu/menu.module").then(m => m.MenuModule)
   },
   {
-    path: "start",
+    path: "",
     loadChildren: () =>
       import("@ui/start/start.module").then(m => m.StartModule)
   }

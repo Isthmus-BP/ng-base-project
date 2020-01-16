@@ -4,12 +4,11 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [autoFocus]="false"
     [disableClose]="true"
-    [hidden]="!(isHandset$ | async)"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
     class="sidenav"
     fixedInViewport
-    position="end"
+    position="start"
   >
     <mat-toolbar
       >Menu
@@ -24,10 +23,6 @@
       </button>
     </mat-toolbar>
     <mat-nav-list>
-      <!-- <button mat-button *ngFor="let i of navItems" [routerLink]="i.url">
-        {{ i.name }}
-      </button> -->
-
       <a
         [class.active-item]="slectedPath.includes(item.url)"
         *ngFor="let item of navItems"
@@ -39,7 +34,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-<!--     <app-nav-bar></app-nav-bar>-->
+    <!--     <app-nav-bar></app-nav-bar>-->
     <div style="position: absolute; width: 100%; min-height: 100%;">
       <router-outlet> </router-outlet>
     </div>

@@ -7,10 +7,6 @@ import { CreateUserComponent } from "./create-user/create-user.component";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "start"
-  },
-  {
-    path: "start",
     component: StartComponent,
     children: [
       {

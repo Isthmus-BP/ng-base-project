@@ -8,10 +8,10 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "app"
+    redirectTo: "menu"
   },
   {
-    path: "app",
+    path: "menu",
     component: MenuComponent,
     children: [
       {
@@ -23,24 +23,12 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        redirectTo: "inicio"
+        redirectTo: "home"
       },
       {
-        path: "inicio",
+        path: "home",
         loadChildren: () =>
-          import("@ui/inicio/inicio.module").then(m => m.InicioModule)
-      },
-      {
-        path: "promociones",
-        loadChildren: () =>
-          import("@ui/promociones/promociones.module").then(
-            m => m.PromocionesModule
-          )
-      },
-      {
-        path: "perfil",
-        loadChildren: () =>
-          import("@ui/perfil/perfil.module").then(m => m.PerfilModule)
+          import("@ui/home/home.module").then(m => m.HomeModule)
       }
     ]
   }

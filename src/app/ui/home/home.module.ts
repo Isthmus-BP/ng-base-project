@@ -1,21 +1,21 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { PerfilComponent } from "./perfil.component";
+
+import { HomeRoutingModule } from "./home-routing.module";
+import { HomeComponent } from "./home.component";
 import {
   ContentModule,
   SideContentModule,
   FooterModule,
   ButtonModule,
   HeaderModule
-} from "@ui/shared";
-import { GeneralComponent } from "./general/general.component";
-import { PerfilRoutingModule } from "./perfin-routing.module";
+} from "../shared";
 
 @NgModule({
-  declarations: [PerfilComponent, GeneralComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
-    PerfilRoutingModule,
+    HomeRoutingModule,
     //#region Shared
     ContentModule,
     SideContentModule,
@@ -25,4 +25,4 @@ import { PerfilRoutingModule } from "./perfin-routing.module";
     //#endregion Shared
   ]
 })
-export class PerfilModule {}
+export class HomeModule {}

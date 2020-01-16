@@ -19,7 +19,7 @@ import {
   NavigationEnd,
   RouterEvent
 } from "@angular/router";
-import { navItems } from "@ui/shared/header/_nav";
+import { navItems } from "@app/ui/menu/_nav";
 import { UtilService } from "@app/services";
 // import { NavBarComponent } from "@ui/shared/containers/nav-bar/nav-bar.component";
 
@@ -32,10 +32,6 @@ export class MenuComponent implements OnInit {
   public navItems = navItems;
   @ViewChild(MatSidenav, { static: false }) sidenav: MatSidenav;
   slectedPath: string = "";
-  // @ViewChild("navBarComponent", { static: false })
-  // navBarComponent: NavBarComponent;
-  // @ViewChild("styleMarginNav", { static: false }) styleMarginNav: ElementRef;
-  // public marginTopPage;
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(["(max-width: 767px)"])
@@ -59,14 +55,6 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  // goOutlet(fruta?: string) {
-  //   this.router.navigate(["./", { outlets: { menuoutlet: "menu" } }], {
-  //     relativeTo: this.route
-  //   });
-  // }
-
-  // ngOnInit(): void {}
-
   goBack() {
     this.location.back();
   }
@@ -85,23 +73,6 @@ export class MenuComponent implements OnInit {
       0
     );
   }
-
-  // ngAfterContentInit(): void {
-  //   setTimeout(() => this.checkNavBarHeight(null));
-  // }
-
-  // @HostListener("window:resize", ["$event"])
-  // public checkNavBarHeight($event) {
-  //   this.marginTopPage = this.navBarComponent.matToolbar._elementRef.nativeElement.offsetHeight;
-  //   this.styleMarginNav.nativeElement.innerHTML =
-  //     `<style type="text/css"> app-page > div.general-padding { ` +
-  //     ` margin-top: ${this.marginTopPage}px;} </style>`;
-  //   return (
-  //     (window.pageYOffset || document.documentElement.scrollTop) -
-  //       (document.documentElement.clientTop || 0) ===
-  //     0
-  //   );
-  // }
 
   private onHardwareBackButton = () => {
     this.sidenav.close();
